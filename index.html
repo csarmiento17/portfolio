@@ -5,45 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>My Portfolio</title>
   </head>
   <body>
     <!--Navigation Section-->
     <header class="main-nav">
-      <h1>Portfo<span style="color: #5288f2">lio</span></h1>
+      <h1>Portfo<span>lio</span></h1>
       <nav>
-        <ul>
-          <li>About Me</li>
-          <li>Work</li>
-          <li>Contact Me</li>
+        <ul class="menu">
+          <li><a href="#about-me">About Me</a></li>
+          <li><a href="#">Work</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </nav>
     </header>
+
+    <!--Hamburger Menu-->
+    <button class="hamburger-toggle">
+      <span class="hamburger-menu"></span>
+    </button>
+    <div class="sidebar">
+      <ul>
+        <li class="sidebar-item"><a href="#about-me">About Me</a></li>
+        <li class="sidebar-item"><a href="#">Work</a></li>
+        <li class="sidebar-item"><a href="#">Contact</a></li>
+      </ul>
+    </div>
     <!--End of Navigation Section-->
 
     <!--Hero Section-->
+
     <section id="hero">
       <div class="hero-container">
-        <div>
-          <h1>Hi, I'm Jay Sarmiento</h1>
-          <!-- <h1>I'm Jay Sarmiento</h1> -->
-          <h3>Full-Stack / SharePoint Developer</h3>
-        </div>
+        <h3>Hi, my name is</h3>
+        <h1>Jay Sarmiento</h1>
+        <h3>Full-Stack / SharePoint Developer</h3>
+        <a href="#" type="button" class="hero-btn">Contact</a>
       </div>
     </section>
     <!--End of Hero Section-->
 
     <!--About Me Section-->
-    <section class="about-me">
+    <section id="about-me">
       <h1 class="section-title">About Me</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-        tempora commodi beatae doloremque architecto, ratione suscipit ipsa
-        veniam nemo unde harum magni porro repellendus excepturi alias facere
-        dignissimos pariatur ea?
-      </p>
+      <div class="about-me-container">
+        <div class="aboutme-item">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+          tempora commodi beatae doloremque architecto, ratione suscipit ipsa
+          veniam nemo unde harum magni porro repellendus excepturi alias facere
+          dignissimos pariatur ea? Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Eos a error ad itaque iure sapiente laboriosam
+          animi! Amet, quae. Nobis aliquid libero fuga suscipit quos? Optio
+          autem magni similique accusamus!
+        </div>
+        <div class="about-img">
+          <img src="./assets/images/aboutme.jpg" />
+        </div>
+      </div>
     </section>
     <!--End of About Me Section-->
+
+    <!--Projects Section-->
+    <!--End of Projects Section-->
+
+    <script src="./assets/js/main.js" />
   </body>
 </html>

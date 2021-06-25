@@ -8,69 +8,270 @@
 
 html {
   font-family: "Source Code Pro", sans-serif;
+  background-color: var(--bg-black);
 }
 
+:root {
+  --primary-font: #fff;
+  --secondary-font: #5288f2;
+  --black-font: #000;
+  --bg-black: #000;
+  --font-xm: 0.8rem;
+  --font-sm: 1.2rem;
+  --font-md: 2.5rem;
+  --font-lg: 3.5rem;
+  --font-xl: 4.5rem;
+}
 a {
   text-decoration: none;
 }
 
-.hero-container {
-  min-height: 90vh;
-  max-width: 1200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+ul {
+  list-style: none;
+}
+
+button {
+  outline: none;
+  border: none;
 }
 
 .section-title {
-  position: inline-block;
-
+  /* position: inline-block; */
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  justify-content: center;
   text-transform: uppercase;
+  font-size: var(--font-md);
 }
-/*Hero Section*/
-#hero {
-  background-image: url("../images/liland.jpg");
-  background-size: cover;
-  background-position: top center;
-  position: relative;
-  color: #fff;
+
+/* Navigation  */
+header {
+  display: flex;
+  justify-content: space-between;
+  background: var(--bg-black);
+  color: var(--primary-font);
   z-index: 1;
 }
 
-#hero::after {
+.main-nav {
+  width: 100%;
+  padding: 20px 20px;
+}
+.main-nav span {
+  color: var(--secondary-font);
+}
+
+header nav {
+  display: flex;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li a {
+  display: flex;
+  height: 40px;
+  line-height: 43px;
+  margin: 3px;
+  padding: 0px 15px;
+  font-size: var(--font-sm);
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--primary-font);
+  letter-spacing: 1px;
+  transition: 0.5s ease;
+}
+
+nav ul li a:hover {
+  border-bottom: 1px solid var(--secondary-font);
+  box-shadow: 5px 10px 25px rgba(82, 136, 242, 0.79);
+}
+
+.sidebar {
+  position: absolute;
+  transform: translateX(100%);
+  top: 60px;
+  right: 0;
+  height: 100vh;
+  width: 30%;
+  max-width: 300px;
+  background: rgba(25, 25, 25, 0.2);
+  transition: transform 0.3s ease-out;
+  z-index: 200;
+}
+
+.sidebar ul {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.sidebar-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0.8em;
+}
+
+.hamburger-toggle {
+  display: block;
+  position: absolute;
+  top: 1em;
+  right: 0;
+  /* transform: translateX(100%); */
+  background: var(--primary-font);
+  padding: 0.5em 0.5em;
+  border: 0;
+  border-radius: 0.25em 0 0 0.25em;
+  cursor: pointer;
+}
+
+.hamburger-menu {
+  display: block;
+  position: relative;
+  margin: 15px auto;
+  /* left: 0; */
+}
+
+.hamburger-menu,
+.hamburger-menu::before,
+.hamburger-menu::after {
+  width: 2em;
+  height: 3px;
+  background: var(--black-font);
+  transition: transform 0.1s ease-in-out;
+  /* opacity: 200ms linear; */
+}
+.hamburger-menu::before,
+.hamburger-menu::after {
   content: "";
   position: absolute;
   left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #000;
-  opacity: 0.7;
-  z-index: -1;
+}
+
+.hamburger-menu::before {
+  bottom: 6px;
+}
+
+.hamburger-menu::after {
+  top: 6px;
+}
+
+.hamburger-open .sidebar {
+  transform: translateX(0);
+}
+
+.hamburger-open .hamburger-menu {
+  transform: rotate(45deg);
+}
+
+.hamburger-open .hamburger-menu::before {
+  opacity: 0;
+}
+
+.hamburger-open .hamburger-menu::after {
+  transform: rotate(90deg) translate(-6px);
+}
+/* End of Navigation */
+
+/*Hero Section*/
+#hero {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  /* width: 100%; */
+  background: var(--bg-black);
+  color: var(--primary-font);
 }
 
 #hero h1 {
-  /* // display: block; */
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  white-space: nowrap; /* Keeps the content on a single line */
   width: fit-content;
   align-items: flex-start;
-  font-size: 3.5rem;
+  font-size: var(--font-lg);
+}
+
+.hero-container h3:nth-last-child(2) {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  color: var(--secondary-font);
   position: relative;
+  text-transform: uppercase;
   animation: typing 2s steps(40, end);
 }
 
-#hero h3 {
-  /* //display: inline-block; */
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  white-space: nowrap; /* Keeps the content on a single line */
-  color: #5288f2;
-  position: relative;
-  text-transform: uppercase;
-  animation: typing 4s steps(40, end);
+.hero-container {
+  max-width: 600px;
 }
 
-/* The typing effect */
+.hero-btn {
+  display: inline-block;
+  padding: 10px 30px;
+  color: var(--primary-font);
+  background-color: transparent;
+  border: 2px solid var(--secondary-font);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-top: 30px;
+  transition: 0.3s ease;
+  transition-property: background-color, color;
+}
+
+.hero-btn:hover {
+  background-color: var(--secondary-font);
+  color: var(--primary-font);
+}
+/* End of Hero Section*/
+
+.active {
+  border-bottom: 1px solid var(--secondary-font);
+  box-shadow: 5px 10px 25px rgba(82, 136, 242, 0.79);
+}
+
+/* About Me  */
+#about-me {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  height: 500px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: var(--primary-font);
+}
+
+#about-me h1 {
+  width: 100%;
+}
+.about-me-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  /* width: 100%; */
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 10px 10px;
+}
+.aboutme-item {
+  display: flex;
+  margin: 20px auto;
+  max-width: 60%;
+}
+.about-img {
+  display: flex;
+}
+.about-img img {
+  border-radius: 20px;
+}
+/* End of About Me  */
+
+/* Keyframes*/
 @keyframes typing {
   from {
     width: 0;
@@ -79,40 +280,22 @@ a {
     width: 100%;
   }
 }
+/* End of Keyframes*/
 
-/* End of Hero Section*/
-
-/* About Me  */
-#about-me {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 500px;
-  margin: 0 auto;
+/* Media Queries */
+@media screen and (max-width: 575px) {
+  .menu {
+    display: none;
+  }
+  .hero-container h1 {
+    font-size: var(--font-md) !important;
+  }
+  .hero-container h3 {
+    font-size: var(--font-sm) !important;
+  }
+  /* #about-me {
+    display: flex;
+    flex-wrap: wrap !important;
+  } */
 }
-/* End of About Me  */
-
-header {
-  display: flex;
-  justify-content: space-between;
-  background: #000000;
-  opacity: transparent;
-  color: #fff;
-  z-index: 1;
-}
-
-header::after {
-  background: white;
-  opacity: 0.7;
-  z-index: -1;
-}
-
-.main-nav {
-  padding: 20px 20px;
-}
-
-header nav {
-  display: flex;
-  justify-content: start;
-}
+/* End of Media Queries */
