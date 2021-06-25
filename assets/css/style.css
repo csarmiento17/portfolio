@@ -16,7 +16,7 @@ html {
   --secondary-font: #5288f2;
   --black-font: #000;
   --bg-black: #000;
-  --font-xm: 0.8rem;
+  --font-xs: 0.8rem;
   --font-sm: 1.2rem;
   --font-md: 2.5rem;
   --font-lg: 3.5rem;
@@ -235,10 +235,10 @@ nav ul li a:hover {
 }
 /* End of Hero Section*/
 
-.active {
+/* .active {
   border-bottom: 1px solid var(--secondary-font);
   box-shadow: 5px 10px 25px rgba(82, 136, 242, 0.79);
-}
+} */
 
 /* Keyframes*/
 @keyframes typing {
@@ -258,7 +258,12 @@ nav ul li a:hover {
     display: none;
   }
 }
+
 @media screen and (max-width: 575px) {
+  .hero-container h3 {
+    font-size: var(--font-xs) !important;
+  }
+
   .menu {
     display: none;
   }
@@ -266,9 +271,6 @@ nav ul li a:hover {
 @media screen and (max-width: 1400px) {
   .hero-container h1 {
     font-size: var(--font-md) !important;
-  }
-  .hero-container h3 {
-    font-size: var(--font-sm) !important;
   }
 }
 /* End of Media Queries */
