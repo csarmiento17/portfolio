@@ -114,12 +114,18 @@ nav ul li a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0.8em;
+  font-size: 16px;
+  /* padding: 0.8em; */
   margin: 2em 1em;
 }
 
 .sidebar-item a {
   color: var(--secondary-font);
+}
+
+.sidebar-item a:hover {
+  color: var(--primary-font);
+  border-bottom: 1px solid var(--secondary-font);
 }
 
 .hamburger-toggle {
